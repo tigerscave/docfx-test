@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "qd7aA3vpBIb4DROmtVeS1qtPukTSswlezwrOQnMOK9g="
+          "hash": "r0D3xJu0P/q344YnZ7ZyURhhmWYH2tlV9JuKeN7qOXU="
         }
       },
       "version": ""
@@ -127,20 +127,6 @@
         ".html": {
           "relative_path": "manual/Waypoint.html",
           "hash": "WB3jq6ibpDn0PV0d5U+SXSBsgll/CTfJFBhkWB4/sVg="
-        }
-      },
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "Conceptual",
-      "source_relative_path": "manual/ros2.md",
-      "output": {
-        ".html": {
-          "relative_path": "manual/ros2.html",
-          "hash": "th3ueVGUsL/U30q/dbp0zFX3p26h6g+lp62us6rmDW0="
         }
       },
       "version": ""
