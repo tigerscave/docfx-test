@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>インストール </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="インストール ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="インストール">インストール</h1>
+
+<h2 id="必要なもの">必要なもの</h2>
+<p>本プロジェクトを動かすためには、下記の三点が必要になります。</p>
+<ul>
+<li>Windows 10 or 11
+<ul>
+<li>Unity 2021.3.9</li>
+</ul>
+</li>
+<li>Ubuntu 20.04LTS
+<ul>
+<li>ROS2 Galactic</li>
+</ul>
+</li>
+<li>MQTTブローカー
+<ul>
+<li>本サンプルでは test.mosquitto.org を利用</li>
+</ul>
+</li>
+</ul>
+<h2 id="unity202139-インストール手順">Unity2021.3.9 インストール手順</h2>
+<ol>
+<li>Unity Hubをダウンロードします。以下のURLからダウンロードしてください。</li>
+</ol>
+<ul>
+<li><a href="https://unity3d.com/jp/get-unity/download">https://unity3d.com/jp/get-unity/download</a></li>
+</ul>
+<ol start="2">
+<li><p>ダウンロードしたUnity Hubのインストーラーを実行します。インストールが完了したら、Unity Hubを起動します。</p>
+</li>
+<li><p>Unity Hubの「インストール済み」タブから、Unity 2021.3.9をインストールします。「インストール済み」タブが表示されていない場合は、左側のメニューから「インストール済み」を選択してください。</p>
+</li>
+<li><p>Unity 2021.3.9をインストールするには、以下の手順に従います。</p>
+</li>
+</ol>
+<ul>
+<li>「Unity バージョン」タブを選択します。</li>
+<li>「追加のバージョン」ボタンをクリックします。</li>
+<li>「Unity 2021.3.9f1」を選択して、「次へ」をクリックします。</li>
+<li>「Windows用のビルドサポート」オプションを選択して、「次へ」をクリックします。</li>
+<li>必要なオプションを選択し、「インストール」をクリックします。</li>
+<li>インストールが完了するまで待ちます。</li>
+</ul>
+<ol start="5">
+<li>Unity 2021.3.9を起動します。Unity Hubの「プロジェクト」タブから、新しいプロジェクトを作成し、Unity 2021.3.9を使用して開発を行うことができます。</li>
+</ol>
+<h2 id="ros2-galacticインストール手順">ROS2 Galactic　インストール手順</h2>
+<ol>
+<li>ROS2 Galacticの依存関係をインストールする
+以下のコマンドを使用して、必要なパッケージをインストールします。</li>
+</ol>
+<pre><code>sudo apt update
+sudo apt install curl gnupg2 lsb-release
+</code></pre>
+<ol start="2">
+<li>ROS2 Galacticのリポジトリを追加する
+以下のコマンドを使用して、ROS2 Galacticのリポジトリを追加します。</li>
+</ol>
+<pre><code>sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+sudo sh -c 'echo &quot;deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main&quot; &gt; /etc/apt/sources.list.d/ros2-latest.list'
+</code></pre>
+<ol start="3">
+<li>ROS2 Galacticをインストールする
+以下のコマンドを使用して、ROS2 Galacticをインストールします。</li>
+</ol>
+<pre><code>sudo apt update
+sudo apt install ros-galactic-desktop
+</code></pre>
+<ol start="4">
+<li>環境変数を設定する
+以下のコマンドを使用して、環境変数を設定します。</li>
+</ol>
+<pre><code>source /opt/ros/galactic/setup.bash
+</code></pre>
+<p>また、上記のコマンドをターミナルで毎回実行するのを避けるために、.bashrcファイルに環境変数を追加することをお勧めします。以下のコマンドを使用して、.bashrcファイルを開きます。</p>
+<pre><code>gedit ~/.bashrc
+</code></pre>
+<p>ファイルの末尾に以下の行を追加して、ファイルを保存して閉じます。</p>
+<pre><code>source /opt/ros/galactic/setup.bash
+</code></pre>
+<ol start="5">
+<li>動作確認をする
+ros2コマンドを実行して、ROS2が起動することを確認します。</li>
+</ol>
+<pre><code>$ ros2
+</code></pre>
+<h1 id="mqtt_bridge-インストール手順">mqtt_bridge インストール手順</h1>
+<p><code>mqtt_bridge</code>は、ROS2とMQTTブローカー間でメッセージの受け渡しを行うためのツールです。</p>
+<h2 id="前提条件">前提条件</h2>
+<ul>
+<li>ROS2 GalacticがUbuntu 20.04にインストールされていること</li>
+<li>インターネット接続が利用可能であること</li>
+</ul>
+<h2 id="手順">手順</h2>
+<ol>
+<li>mqtt_bridgeをインストールするために、以下のコマンドを実行します。</li>
+</ol>
+<pre><code>$ sudo apt install ros-galactic-rosbridge-suite ros-galactic-rosbridge-library ros-galactic-ros2-mqtt-bridge
+</code></pre>
+<ol start="2">
+<li>ROS2の環境変数を設定します。</li>
+</ol>
+<pre><code>$ source /opt/ros/galactic/setup.bash
+</code></pre>
+<ol start="3">
+<li>mqtt_bridgeを起動します。mqtt_bridgeはROS2のノードであり、ros2 runコマンドで起動します。</li>
+</ol>
+<pre><code>$ ros2 run ros2_mqtt_bridge mqtt_bridge
+</code></pre>
+<p>これで、mqtt_bridgeのインストールと起動が完了しました。</p>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/adawarp/PLATEAU-Digital-Twin-Viewer/blob/master/Documentation/manual/Installation.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
